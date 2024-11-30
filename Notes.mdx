@@ -58,7 +58,7 @@
 
 ### 2.2 Component Folder Structure and how to import them
 
-- Each component may be multiple related files ex:
+- Each component may have multiple related files ex:
   - the component itself
   - test file
   - storybook file
@@ -66,4 +66,17 @@
   - style file
 - How to organize the assets?
   - All files related to a component should be in the same folder.
+    - One component per folder
   - Please use relative paths for importing all the assets within the component folder.
+- Benefits:
+  - Easier to navigate
+  - Easier to understand
+  - Easier to test
+  - Easier to maintain
+  - Easier to move the component to another folder
+
+### 2.3 Component Location
+
+- 1. Page specific components
+- If a component is only used by one route, then it should be placed in the route folder.
+- 2. Shared components
