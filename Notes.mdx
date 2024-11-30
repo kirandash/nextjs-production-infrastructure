@@ -162,7 +162,13 @@
   - https://testing-library.com/docs/user-event/intro/
   - `pnpm add --save-dev @testing-library/user-event`
 
-### 4.3 Unit Testing Async React Server Components with Jest
+### 4.3 Unit Testing Async React Server Components with Jest with mocking
 
 - Make sure you use `await render`
 - Mock the fetch function
+
+### 4.4 Unit Testing Async React Server Components with Jest with isomorphic-fetch
+
+- This is to make the external API call that is shimmed fetch on the server side
+- https://www.npmjs.com/package/isomorphic-fetch
+- `pnpm add --save-dev isomorphic-fetch`
