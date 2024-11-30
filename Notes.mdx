@@ -270,3 +270,14 @@
 - If playwright does not close port properly, you can manually kill the port by running `kill -9 <pid>`
   - you can find the pid by running `lsof -i :<port number>`
 - `pnpm test:e2e`
+
+## 8. Quality Assurance with Github Actions for PR, Husky for local before commit and Bundle Check (my-third-next-app)
+
+### 8.1 Intro and setup
+
+- It is better to run some checks ex: bundle check, tests or similar checks on both local before you create a PR and on CI/CD pipeline before deploying to production.
+- Husky is a tool that allows you to run commands before you commit your code.
+- Github Actions:
+  - https://github.com/marketplace/actions/bundle-phobia-action
+  - https://github.com/marketplace/actions/bundle-phobia-action
+- Bundle size is an important metric. It helps to identify the size of the bundle and the dependencies and the size of the node_modules folder.
