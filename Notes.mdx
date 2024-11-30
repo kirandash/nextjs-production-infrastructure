@@ -125,3 +125,23 @@
 - stories.ts:
   - `autodocs`: automatically generate documentation for the component
 - use `build-storybook` to build the storybook and you can host it on vercel or any other static site hosting service like s3 etc.
+- It's a fantastic tool. Highly recommended.
+- Storybook on monorepo might be challenging and more involved.
+  - ex: whether to share stories from application or packages or both?
+  - we will see in later sessions.
+
+## 4. Unit Testing with Jest
+
+- https://jestjs.io/docs/getting-started
+- Installation: `pnpm add --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom ts-node @types/jest`
+  - `jest-environment-jsdom`: to connect jest with the virtual in memory DOM
+  - `@testing-library/jest-dom`: to render our react components in jest dom
+  - `@testing-library/react`: to test the react components on jest dom
+  - `ts-node`: to run the tests with typescript
+  - `@types/jest`: to get the types for jest
+- Create a new test file for the component and write the tests for the component
+- Initialization:
+  - `pnpm create jest@latest`
+    - from test environment, select jsdom
+  - automatically clear mock calls and instances between every test
+    - No
