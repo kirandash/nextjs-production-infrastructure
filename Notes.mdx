@@ -212,3 +212,9 @@
 ### 5.4 Unit Testing Client Components
 
 - Also it's a good practice to move `@testing-library/jest-dom/vitest` to a setup file to avoid importing it in every test file.
+
+### 5.5 Unit Testing Async RSC
+
+- Mock the fetch function
+- Use `afterEach` to clean up the DOM after each test
+- The concept is still the same as jest. Only the syntax is different.
