@@ -1,13 +1,17 @@
-import { render, screen } from "@testing-library/react";
+import { describe, it, expect, afterEach } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import "@testing-library/jest-dom";
+import UnitTestingVitest02 from "./page";
 
-import UnitTestingJest02 from "./page";
+describe("UnitTestingVitest02", () => {
+  // This is to clean up the DOM after each test
+  afterEach(() => {
+    cleanup();
+  });
 
-describe("UnitTestingJest02", () => {
   it("renders initial state correctly", () => {
-    render(<UnitTestingJest02 />);
+    render(<UnitTestingVitest02 />);
 
     // Check if title is rendered
     const titleElement = screen.getByTestId("counter-title");
@@ -29,13 +33,11 @@ describe("UnitTestingJest02", () => {
   });
 
   it("increments counter when button is clicked", async () => {
-    // Setup userEvent
     const user = userEvent.setup();
-    render(<UnitTestingJest02 />);
+    render(<UnitTestingVitest02 />);
 
     const incrementButton = screen.getByTestId("increment-button");
 
-    // Replace fireEvent.click with userEvent.click
     await user.click(incrementButton);
     expect(screen.getByTestId("count-display").textContent).toBe("Count: 1");
 
@@ -44,16 +46,14 @@ describe("UnitTestingJest02", () => {
   });
 
   it("shows greeting when name is entered", async () => {
-    // Setup userEvent
     const user = userEvent.setup();
-    render(<UnitTestingJest02 />);
+    render(<UnitTestingVitest02 />);
 
     const nameInput = screen.getByTestId("name-input");
 
     // Initially, greeting should not be visible
     expect(screen.queryByTestId("greeting")).not.toBeInTheDocument();
 
-    // Replace fireEvent.change with userEvent.type
     await user.type(nameInput, "Kiran Dash");
 
     // Greeting should now be visible with the entered name
