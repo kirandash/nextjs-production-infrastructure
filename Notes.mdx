@@ -312,3 +312,10 @@
   - Uploads the bundle analysis as an artifact for later review
 - Set BUNDLEWATCH_GITHUB_TOKEN in the repository secrets
   - go to repo -> settings -> secrets and variables -> Actions -> new repository secret
+
+### 8.5 Configure Husky to run bundlecheck
+
+- Husky will make sure that bundlecheck is run before you commit your code.
+  - that way our github actions does not fail because of bundle size issues.
+  - `npx husky init`
+  - `npx husky add .husky/pre-commit`
