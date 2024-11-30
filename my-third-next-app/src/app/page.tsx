@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <MUI.Container>
       <MUI.Box sx={{ my: 4 }}>
-        <h1>Bundle Size Test</h1>
+        <h1>Bundle Size Tests</h1>
         <p>Current time: {moment().format("MMMM Do YYYY, h:mm:ss a")}</p>
 
         <MUI.TextField label="Some Input" variant="outlined" />
