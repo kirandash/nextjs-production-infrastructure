@@ -22,3 +22,36 @@
         - https://github.com/trivago/prettier-plugin-sort-imports
         - https://github.com/IanVS/prettier-plugin-sort-imports (✅ Recommended)
           - `pnpm add --save-dev @ianvs/prettier-plugin-sort-imports`
+
+## 2 Project organization
+
+### 2.1 Component Files Patterns
+
+- 1. One component per file (Some Developers do this but not recommended)
+
+  - it works well with small components ex: Button, Input etc but not with complex components. With complex component it's possible that the line number will go in 100s ex: 500 lines of code. And then it might make the chunk size bigger.
+  - Note that if prop changes, the whole component will re-render. So it's better to split the component into smaller components. So that only the smaller component will re-render.
+
+- 2. Nested Components 🚨 - Anti-Pattern
+
+  - DO NOT USE THIS PATTERN!
+  - Drawbacks:
+    - If you have a component that has more than 3 levels of nesting, then it's better to move that component to a separate file.
+    - Component Definition Inside Component: Each component is defined inside another component, which means they get redefined on every render.
+    - State Management Issues: Each nested component has its own state, but they're recreated on every render of their parent, which can lead to unexpected behavior.
+    - Poor Reusability: These components can't be used anywhere else in the application since they're scoped inside their parent component.
+    - Debugging Difficulty: The component hierarchy becomes harder to understand and debug due to the nested structure.
+    - Performance Issues: React hooks (like useState) should not be used in nested component definitions as they can lead to bugs and memory leaks.
+    - Next.js will not be able to optimize the nested components as well as the top level components.
+
+- 3. ✅ Recommended: One exported component per file
+  - Benefits:
+    - One Component Per File: Each component is defined in its own file, making it easier to maintain and test.
+    - Clear Dependencies: The import/export structure clearly shows how components depend on each other.
+    - Reusability: Components can be easily reused in other parts of the application.
+    - Maintainability: Each file has a single responsibility, making the code easier to understand and modify.
+    - Better Testing: Components can be tested in isolation more easily.
+    - Proper Tree-Shaking: Unused components can be eliminated during the build process.
+  - Rules:
+  - Don't put too many lines of code in one file
+  - Max 200 lines of code per file
