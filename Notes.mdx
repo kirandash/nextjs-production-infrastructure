@@ -1,0 +1,19 @@
+# Next.js Workshop - Setting Up Production-Ready Infrastructure for Scalable Apps
+
+## 1 Eslint and prettier
+
+- Eslint: Linting tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. And check for errors etc.
+- Prettier: Code formatter that enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+- Both these tools will help you to maintain a consistent code style and avoid errors.
+- Create a new next project
+  - `pnpm dlx create-next-app@latest my-first-next-app --use-pnpm`
+  - install with all defaults
+  - check eslintrc.json and you should see: `"extends": ["next/core-web-vitals", "next/typescript"]`
+  - to run lint: `pnpm run lint`
+  - install prettier and make sure prettier and eslint are in sync
+    - https://prettier.io/
+    - important: how to make sure prettier and eslint rules does not conflict with each other
+    - https://github.com/prettier/eslint-config-prettier
+    - Tailwind plugin
+      - https://github.com/francoismassart/eslint-plugin-tailwindcss
+    - `pnpm add --save-dev prettier eslint-config-prettier eslint-plugin-tailwindcss`
