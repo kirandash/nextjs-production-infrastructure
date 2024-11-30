@@ -1,15 +1,36 @@
-import { Label } from '@/components/bgwebagency/ui/label';
+import { Label } from '@/components/bgwebagency-design-system/ui/label';
 import { Badge } from '@/components/shadcn/ui/badge';
 import { Button } from '@/components/shadcn/ui/button';
+
+import { DemoForm } from './components/DemoForm/DemoForm';
 
 export default function SharedComponentsDemo() {
   return (
     <div className="p-6 max-w-2xl mx-auto space-y-8">
       <div className="space-y-2">
-        <h1 className="text-2xl font-bold">Shared Components Demo</h1>
+        <h1 className="text-2xl font-bold">Components Demo</h1>
         <p className="text-muted-foreground">
-          This page demonstrates the usage of shared UI components from our
-          component library.
+          This page demonstrates the usage of both shared UI components and
+          page-specific components.
+        </p>
+      </div>
+
+      {/* Page Specific Component Section */}
+      <section className="space-y-4">
+        <div className="flex items-center gap-2">
+          <h2 className="text-xl font-semibold">Page-Specific Component</h2>
+          <Badge>Using Shared Components</Badge>
+        </div>
+        <DemoForm />
+      </section>
+
+      <div className="border-t my-8" />
+
+      {/* Shared Components Showcase */}
+      <div className="space-y-2">
+        <h2 className="text-xl font-bold">Shared Components Library</h2>
+        <p className="text-muted-foreground">
+          Individual examples of our shared components
         </p>
       </div>
 
@@ -46,25 +67,6 @@ export default function SharedComponentsDemo() {
           <Badge variant="secondary">Secondary</Badge>
           <Badge variant="destructive">Destructive</Badge>
           <Badge variant="outline">Outline</Badge>
-        </div>
-      </section>
-
-      {/* Combined Usage Example */}
-      <section className="space-y-4 border rounded-lg p-4">
-        <h2 className="text-xl font-semibold">Combined Usage Example</h2>
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <Label variant="required">Username</Label>
-            <input
-              type="text"
-              className="w-full px-3 py-2 border rounded-md"
-              placeholder="Enter username"
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <Button type="submit">Submit</Button>
-            <Badge variant="secondary">Required</Badge>
-          </div>
         </div>
       </section>
     </div>

@@ -83,3 +83,29 @@
   - If a component is used in multiple routes, then it should be placed in the common components folder.
   - src/app/components
     - shadcn: for all shadcn components
+    - bgwebagency-design-system: for all bgwebagency components
+- 3. Shared Components MonoRepo (Turborepo)
+  - components that are used in multiple projects should be moved from app level to packages level
+  - apps folder: for all the apps
+  - packages folder: for all the packages
+    - packages/typescript-config
+    - packages/eslint-config
+    - packages/ui
+      - packages/ui/button
+      - packages/ui/card
+      - packages/ui/input
+      - packages/ui/accordion
+      - packages/ui/dialog and so on...
+
+### 2.4 Component Naming Conventions
+
+- Not very strict but use either PascalCase or kebab-case
+- I use the following naming convention:
+  - Standard: `Button.tsx`, `AlertDialog.tsx`, `Checkbox.tsx` etc
+    - it uses PascalCase
+  - Shadcn: `ui/button.tsx`, `ui/alert-dialog.tsx`, `ui/checkbox.tsx` etc
+    - it uses kebab-case
+  - bgwebagency: `Button.tsx`, `AlertDialog.tsx`, `Checkbox.tsx` etc
+    - it uses PascalCase
+
+## 3. Storybook
