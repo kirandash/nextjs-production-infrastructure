@@ -298,3 +298,17 @@
   - bundlewatch.config.ts - My personal preference
   - or do the config in package.json, we are doing this in this project but either is fine. set the maxsize as per your requirement.
 - Run: `pnpm bundlewatch`. make sure to build the project first using `pnpm build`.
+
+### 8.4 Configure Github Actions to run bundlecheck
+
+- https://bundlewatch.io/#/getting-started/using-bundlewatch
+- .github/workflows/bundlecheck.yml
+- This configuration:
+  - Triggers on pushes and pull requests to main/master branches, but only when changes occur in the my-third-next-app directory
+  - Sets up the workflow to run in the my-third-next-app subdirectory
+  - Uses Node.js 20 with npm caching for faster builds
+  - Installs dependencies and builds the project
+  - Uses size-limit-action to analyze and report bundle sizes
+  - Uploads the bundle analysis as an artifact for later review
+- Set BUNDLEWATCH_GITHUB_TOKEN in the repository secrets
+  - go to repo -> settings -> secrets and variables -> Actions -> new repository secret

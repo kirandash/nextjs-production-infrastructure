@@ -38,5 +38,10 @@
         "master"
       ]
     }
-  }
+  },
+  "size-limit": [
+    {
+      "path": ".next/static/chunks/**/*.js"
+    }
+  ]
 }
