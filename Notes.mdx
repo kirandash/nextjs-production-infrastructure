@@ -84,18 +84,23 @@
   - src/app/components
     - shadcn: for all shadcn components
     - bgwebagency-design-system: for all bgwebagency components
-- 3. Shared Components MonoRepo (Turborepo)
-  - components that are used in multiple projects should be moved from app level to packages level
-  - apps folder: for all the apps
-  - packages folder: for all the packages
-    - packages/typescript-config
-    - packages/eslint-config
-    - packages/ui
-      - packages/ui/button
-      - packages/ui/card
-      - packages/ui/input
-      - packages/ui/accordion
-      - packages/ui/dialog and so on...
+- 3. Shared Components across projects:
+  - MonoRepo (Turborepo): (✅ Recommended)
+    - components that are used in multiple projects should be moved from app level to packages level
+    - apps folder: for all the apps
+    - packages folder: for all the packages
+      - packages/typescript-config
+      - packages/eslint-config
+      - packages/ui
+        - packages/ui/button
+        - packages/ui/card
+        - packages/ui/input
+        - packages/ui/accordion
+        - packages/ui/dialog and so on...
+  - npm package:
+    - Shared Components can be a single npm package and can be used in multiple projects
+    - during local development, we can use the local package by linking it using pnpm
+    - This is also ok but I don't use it
 
 ### 2.4 Component Naming Conventions
 
@@ -109,3 +114,13 @@
     - it uses PascalCase
 
 ## 3. Storybook
+
+- https://storybook.js.org/
+- Storybook is a tool for
+  - developing UI components and pages in isolation
+  - documentation
+  - testing
+- It also helps collaboration between developers and designers and managers etc.
+- It's a good way of demonstrating the component in the best possible way.
+- stories.ts:
+  - `autodocs`: automatically generate documentation for the component
