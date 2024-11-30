@@ -185,6 +185,7 @@
 
 - Very popular recently
 - https://vitest.dev/
+- Provides a nice UI to see the test results whereas Jest does not.
 
 ### 5.1 Install vitest
 
@@ -241,3 +242,18 @@
 
 - https://www.npmjs.com/package/concurrently
 - This is used to run the development server and the cypress test in parallel
+- To run tests: `pnpm run e2e:test`
+- To run with UI: `pnpm cypress open`
+
+- Note: E2E testing is more important than unit testing. And I recommend to do it first.
+
+## 7. E2E Testing with Playwright (my-second-next-app)
+
+- New and popular
+- Faster than Cypress
+- https://playwright.dev/
+
+### 7.1 Install Playwright
+
+- `pnpm create playwright`
+- This will install chromium browser and firefox browser and Webkit browser (Safari)
