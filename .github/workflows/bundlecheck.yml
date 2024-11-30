@@ -3,12 +3,12 @@ name: Bundle Size Check
 on:
   push:
     branches: [main]
-    paths:
-      - "my-third-next-app/**"
   pull_request:
     branches: [main]
-    paths:
-      - "my-third-next-app/**"
+
+defaults:
+  run:
+    working-directory: my-third-next-app
 
 env:
   BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
@@ -47,13 +47,13 @@ jobs:
       - name: Restore next build
         uses: actions/cache@v4
         with:
-          path: .next
-          key: ${{ runner.os }}-next-build-${{ hashFiles('next.config.js') }}
+          path: my-third-next-app/.next
+          key: ${{ runner.os }}-next-build-${{ hashFiles('my-third-next-app/next.config.js') }}
           restore-keys: |
             ${{ runner.os }}-next-build-
 
       - name: Build project
-        run: ./node_modules/.bin/next build
+        run: pnpm run build
 
       - name: Check bundle size
         run: pnpm run bundlewatch
