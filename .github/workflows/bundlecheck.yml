@@ -2,9 +2,9 @@ name: Bundle Size Check
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 defaults:
   run:
@@ -15,7 +15,7 @@ env:
   CI_REPO_OWNER: kirandash
   CI_REPO_NAME: nextjs-production-infrastructure
   CI_COMMIT_SHA: ${{ github.sha }}
-  CI_BRANCH: main
+  CI_BRANCH: master
 
 permissions:
   contents: read
