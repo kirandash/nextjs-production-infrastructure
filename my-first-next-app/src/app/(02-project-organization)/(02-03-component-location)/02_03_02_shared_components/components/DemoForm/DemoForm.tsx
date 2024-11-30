@@ -1,4 +1,4 @@
-import { Label } from '@/components/bgwebagency-design-system/ui/label';
+import { Label } from '@/components/bgwebagency-design-system/ui/Label';
 import { Badge } from '@/components/shadcn/ui/badge';
 import { Button } from '@/components/shadcn/ui/button';
 
