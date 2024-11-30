@@ -4,8 +4,6 @@ import '@testing-library/jest-dom';
 
 import AsyncServerComponent from './page';
 
-import 'isomorphic-fetch';
-
 describe('AsyncServerComponent', () => {
   it('renders posts from real API successfully', async () => {
     // Render the Async server component using real API call

@@ -166,9 +166,17 @@
 
 - Make sure you use `await render`
 - Mock the fetch function
+- I normally will mock the function during unit test rather than using real API call. But in some use cases ex: when the data is dynamic and changes based on the user input, then we can use the real API call.
 
 ### 4.4 Unit Testing Async React Server Components with Jest with isomorphic-fetch
 
 - This is to make the external API call that is shimmed fetch on the server side
 - https://www.npmjs.com/package/isomorphic-fetch
 - `pnpm add --save-dev isomorphic-fetch`
+- jest does not support the fetch API out of the box. So we need to import the isomorphic-fetch module in the test environment.
+
+### 4.5 jest.setup.ts configuration
+
+- This is to import the isomorphic-fetch module in the test environment
+- Move the common imports to this file
+- This will run before each test
