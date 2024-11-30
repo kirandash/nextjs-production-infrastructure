@@ -257,3 +257,16 @@
 
 - `pnpm create playwright`
 - This will install chromium browser and firefox browser and Webkit browser (Safari)
+
+### 7.2 Playwright Configuration
+
+- playwright.config.ts
+
+### 7.3 Writing Tests
+
+- e2e/blogposts.spec.ts
+- run: `pnpm exec playwright test`
+- to show reports: `pnpm exec playwright show-report`
+- If playwright does not close port properly, you can manually kill the port by running `kill -9 <pid>`
+  - you can find the pid by running `lsof -i :<port number>`
+- `pnpm test:e2e`
