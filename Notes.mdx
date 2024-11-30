@@ -281,3 +281,20 @@
   - https://github.com/marketplace/actions/bundle-phobia-action
   - https://github.com/marketplace/actions/bundle-phobia-action
 - Bundle size is an important metric. It helps to identify the size of the bundle and the dependencies and the size of the node_modules folder.
+
+### 8.3 Install bundle check library and Configuration
+
+- bundlewatch
+  - https://bundlewatch.io/#/
+  - ✅ Recommended
+  - new and popular
+  - `pnpm add --save-dev bundlewatch`
+- Other options:
+  - Webpack Bundle Analyzer
+    - https://github.com/webpack-contrib/webpack-bundle-analyzer
+  - Source Map Explorer
+    - https://github.com/danvk/source-map-explorer
+- Configuration:
+  - bundlewatch.config.ts - My personal preference
+  - or do the config in package.json, we are doing this in this project but either is fine. set the maxsize as per your requirement.
+- Run: `pnpm bundlewatch`. make sure to build the project first using `pnpm build`.
