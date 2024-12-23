@@ -312,3 +312,57 @@
   - Uploads the bundle analysis as an artifact for later review
 - Set BUNDLEWATCH_GITHUB_TOKEN in the repository secrets
   - go to repo -> settings -> secrets and variables -> Actions -> new repository secret
+
+### 8.5 Configure Husky to run bundlecheck
+
+- Husky will make sure that bundlecheck is run before you commit your code.
+  - that way our github actions does not fail because of bundle size issues.
+  - `npx husky init`
+  - `npx husky add .husky/pre-commit`
+
+## 9 MonoRepos
+
+### 9.1 What is a monorepo? And whether and when you should use it?
+
+- A monorepo is a single repository that contains multiple projects or packages. ex: libraries, apps etc.
+- We will create a monorepo with few applications and few packages (design system, typescript config, eslint config etc)
+- easy to manage and version etc
+- where monorepo will be good?
+  - single application with different deployment targets ex: web, mobile, desktop etc
+  - When you have multiple projects that share some common code ex: design system, typescript config, eslint config etc
+  - different deployment configrations for design system and other packages etc
+  - packages with business logic, packages with api wrappers etc
+- How to create monorepo?
+  - pnpm, npm, yarn has workspaces that we can use to create monorepo and you don't need any additional packages
+    - pro: native support
+    - con:
+      - additional configuration or tooling required
+      - performance and optimization issues which you might have to solve your own
+  - monorepo packages. they provide tooling and configuration out of the box
+    - turbo, nx, lerna etc
+    - pro:
+      - optimized for monorepo
+      - built in tooling and easier to use
+      - better performance
+      - better caching
+      - really good for ci/cd because of the caching
+- When not to use Monorepo?
+
+  - when you have a single project
+  - when you have multiple projects that don't share any common code
+  - when you have a small project
+  - when you have a project that is not going to scale
+  - when you have a project that is not going to be maintained for a long time
+
+- How to decide when to use monorepo?
+  - DON'T start with monorepo!!!
+  - start with a single repository per app with all packages
+  - see how much code is shared between the projects over time
+  - if you see that there is a lot of shared code and a lot of time is spent in managing the shared code, then it's time to start using `npm link` or `pnpm link` or `yarn link` along with packages per repository
+    - con: it's' slightly difficult to manage the linkings
+  - if the changes are frequent then you might wanna use monorepo
+  - migrate to monorepo slowly by moving the shared code to the monorepo one by one
+
+### 9.2 Create a monorepo with TurboRepo
+
+- https://github.com/kirandash/nextjs-production-infrastructure-on-turbo
